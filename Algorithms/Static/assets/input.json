@@ -1,0 +1,14 @@
+{
+    "sort":{
+        "user_input_flag":false,
+        "random_input":{
+            "size": 100,
+            "speed": 10
+        },
+        "user_input":{
+            "size":10,
+            "speed":10,
+            "array":[1,2,3,4,5]
+        }
+    }
+}
