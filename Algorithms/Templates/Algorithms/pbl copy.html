@@ -1,0 +1,86 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{%static 'favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{%static 'favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'favicon_io/favicon-16x16.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Tourney:wght@600&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/pbl.css' %}">
+    <title>Linearly</title>
+</head>
+<body id="body">
+  <div id="particles-js"></div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', "{% static '/assets/particles.json' %}", function() {
+      console.log('callback - particles.js config loaded');
+    });
+  </script>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to left, #da4453, #89216b );" >
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(to left, #43c6ac, #191654);" > -->
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}" id="logo">
+            <i class="fas fa-code-branch"></i>
+            <!-- <img src="../assets/logo.png" alt="" width="150" height="40"> -->
+          LINEARLY</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown" id="default">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sorting
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'bubblesort' %}">Bubble Sort</a></li>
+                  <li><a class="dropdown-item" href="{%url 'selectionsort' %}">Selection Sort</a></li>
+                  <li><a class="dropdown-item" href="{%url 'insertionsort' %}">Insertion Sort</a></li>
+                  <li><a class="dropdown-item" href="{%url 'mergesort' %}">Merge Sort</a></li>
+                  <li><a class="dropdown-item" href="{%url 'quicksort' %}">Quick Sort</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown" id="default">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Search
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{%url 'linearsearch' %}">Linear Search</a></li>
+                  <li><a class="dropdown-item" href="{%url 'binarysearch' %}">Binary Search</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Graph</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container" id="header">
+      <h1>To See is to believe</h1>
+      <hr>
+      <div class="container" id="secondary">
+        "An Algorithm must be seen to be belived" - Sir Donald Knuth<br>To truly understand an algorithm it is imperative to visualize it. <br> With this goal in mind, we created Linearly. <br> A platform to visualize algorithms made for students, by students.
+      </div>      
+      <br>
+      <a class="btn btn-lg" role="button" href="{%url 'bubblesort' %}" id="event">Get Started</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6cae5e0834.js" crossorigin="anonymous"></script>
+    <script src="{% static 'javascript/pbl.js'%}"></script>
+</body>
+</html>

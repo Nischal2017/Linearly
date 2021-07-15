@@ -15,3 +15,62 @@ body{
     background-size: cover;
     justify-content:center;
 }
+.form-radio {
+    margin-bottom: 40px;
+}       
+
+.form-radio input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px;
+}
+
+.form-radio input+label {
+    margin: 0px;
+    padding: 12px 10px;
+    width: 94px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #ad8fbd;
+    background-color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ad8fbd;
+    text-align: center;
+    text-transform: none;
+    transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+}
+
+.form-radio input:checked+label {
+    background-color: #ad8fbd;
+    color: #FFF;
+    border-color: #ad8fbd;
+    z-index: 1;
+}
+.form-radio {
+    padding: 0 11px;
+}
+
+.form-radio {
+    margin-bottom: 23px;
+    position: relative;
+}
+.form-radio input:focus+label {
+    outline: none;
+}
+
+
+.form-radio input:hover {
+    background-color: #ad8fbd;
+    color: #FFF;
+    border-color: #ad8fbd;
+}
