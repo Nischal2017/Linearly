@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 import json
 import random
-# Create your views here.
+
 def home(request):
     return render(request,'Algorithms/pbl.html')
 
@@ -37,7 +37,6 @@ def bubblesort(request):
     context["data_not_present"]=True
     return render(request,'Algorithms/bubblesort.html',context)
 
-
 def selectionsort(request):
     if request.POST:
         context = {}
@@ -68,7 +67,6 @@ def selectionsort(request):
     context["data_not_present"] = True
     return render(request, 'Algorithms/selectionsort.html', context)
 
-
 def insertionsort(request):
     if request.POST:
         context = {}
@@ -98,7 +96,6 @@ def insertionsort(request):
     context = {}
     context["data_not_present"] = True
     return render(request, 'Algorithms/insertionsort.html', context)
-
 
 def mergesort(request):
     if request.POST:
@@ -171,7 +168,6 @@ def linearsearch(request):
             array = []
             for i in range(int(size)):
                 array.append(random.randint(0, 400))
-            array = sorted(array)
             context["data"] = json.dumps({
                 "type": "r",
                 "size": size,
@@ -182,7 +178,6 @@ def linearsearch(request):
             context["data_not_present"] = False
             key = int(request.POST.get('key'))
             array = list(map(int, request.POST.get('array').split(' ')))
-            array = sorted(array)
             max_ele = max(array)
             scale = 400/max_ele
             scaled_array = [round(i*scale, 0) for i in array]
@@ -197,7 +192,6 @@ def linearsearch(request):
     context = {}
     context["data_not_present"] = True
     return render(request, 'Algorithms/linearsearch.html', context)
-
 
 def binarysearch(request):
     if request.POST:
@@ -234,3 +228,15 @@ def binarysearch(request):
     context = {}
     context["data_not_present"] = True
     return render(request, 'Algorithms/binarysearch.html', context)
+
+def traveller(request):
+    return render(request,'Algorithms/traveller.html')
+def prim(request):
+    return render(request,'Algorithms/prims.html')
+def kruskal(request):
+    return render(request,'Algorithms/kruskal.html')
+def dijkstra(request):
+    return render(request,'Algorithms/dijkstra.html')
+
+def team(request):
+    return render(request,'Algorithms/Team.html')

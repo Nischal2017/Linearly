@@ -29,7 +29,7 @@ function preload() {
   }
 }
 function setup() {
-  createCanvas(windowWidth, 600);
+  createCanvas(windowWidth-(0.015*windowWidth), windowHeight/1.8);
   if(rn==true){
     w = width / n;
     for (var i = 0; i < n; i++) {
@@ -41,7 +41,7 @@ function setup() {
     n = vals.length;
   }
   slider = createSlider(1, 100, sp, 1);
-  slider.position(500, 300);
+  slider.position(windowWidth/14,windowHeight/2.4);
   slider.style('width', '200px');
   frameRate(slider.value());
 }

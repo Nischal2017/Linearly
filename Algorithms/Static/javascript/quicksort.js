@@ -22,7 +22,7 @@ function preload(){
   }
 }
 function setup() {
-  createCanvas(windowWidth, 450);
+  createCanvas(windowWidth-(0.015*windowWidth), windowHeight/1.8);
   if(rn==true){
     for (var i = 0; i < n; i++) {
       vals.push(round(random(height)));
@@ -34,7 +34,7 @@ function setup() {
     is_pivot.push(-1);
   }
   slider = createSlider(1, 100, sp, 1);
-  slider.position(500, 300);
+  slider.position(windowWidth/14,windowHeight/2.4);
   slider.style('width', '200px');
   frameRate(slider.value());
   w = width/n;

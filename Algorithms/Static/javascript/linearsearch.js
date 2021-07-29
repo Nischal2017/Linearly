@@ -17,7 +17,10 @@ function preload(){
     values = jsonData.array;
     value = jsonData.value;
     scaled_values = values;
-    scaled_value = value;
+    if(round(random(2))==1)
+      scaled_value = scaled_values[round(random(scaled_values.length))]
+    else
+      scaled_value = value;
   }
   if (jsonData.type == "c") {
     rn = false;
@@ -29,7 +32,7 @@ function preload(){
   }
 }
 function setup() {
-  createCanvas(windowWidth,600);
+  createCanvas(windowWidth-(0.015*windowWidth), windowHeight/1.75);
   bar_width = width/n;
   frameRate(5);
 }
@@ -44,7 +47,8 @@ function draw() {
       rect(bar_width*k,0,bar_width,scaled_values[k]);
   }
   if (i >= n) {
-    fill(255, 0, 0);
+    stroke(255, 209, 220)
+    fill(255, 209, 220,200);
     var txt = "Element " + value + " not found";
     text(txt, 0, 400, width, 20)
     noLoop();

@@ -52,11 +52,10 @@ hr{
     border-bottom: 2px solid white ;
     width: 800px;
 }
+
 ul{
     width: 200px;
 }
-
-/* css for the bubble sort page */
 
 input{
     width: 200px;
@@ -65,11 +64,14 @@ input{
 #logo{
     font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 20px;
+    font: linear-gradient(to right, #4776e6, #8e54e9);
 }
 
 .dropdown-menu{
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.3);
 }
+
 .dropdown-item{
     color:white;
 }
+

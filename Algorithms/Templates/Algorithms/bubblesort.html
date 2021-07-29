@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{%static 'favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{%static 'favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'favicon_io/favicon-16x16.png' %}">
     <link rel="manifest" href="/site.webmanifest">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
@@ -18,6 +18,19 @@
     <link rel="stylesheet" href="{% static 'css/bubblesort.css' %}">
     <title>Bubble Sort</title>
     <style>
+        #submit_rn{
+            border-color: #ffb6c1;
+            color: #ffb6c1;
+        }
+        #submit_cu{
+            border-color: #ffb6c1;
+            color: #ffb6c1;
+        }
+        .form-control:focus{
+            background-color: transparent;
+            color: white;
+            border-color: #da4453;
+        }
         .form-radio {
             margin-bottom: 40px;
         }       
@@ -38,11 +51,11 @@
             position: relative;
             display: inline-block;
             text-align: center;
-            border: 1px solid #ad8fbd;
+            border: 1px solid #da4453;
             background-color: #FFF;
             font-size: 14px;
             font-weight: 600;
-            color: #ad8fbd;
+            color: #89216b;
             text-align: center;
             text-transform: none;
             transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
@@ -54,9 +67,9 @@
         }
 
         .form-radio input:checked+label {
-            background-color: #ad8fbd;
+            background-color: #89216b;
             color: #FFF;
-            border-color: #ad8fbd;
+            border-color: #89216b;
             z-index: 1;
         }
         .form-radio {
@@ -73,9 +86,9 @@
 
 
         .form-radio input:hover {
-            background-color: #ad8fbd;
+            background-color: #89216b;
             color: #FFF;
-            border-color: #ad8fbd;
+            border-color: #89216b;
         }
     </style>
 </head>
@@ -117,11 +130,19 @@
                             <li><a class="dropdown-item" href="{%url 'binarysearch' %}">Binary Search</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown" id="default">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Graphs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'traveller' %}">Travelling Salesman</a></li>
+                          <li><a class="dropdown-item" href="{%url 'prim' %}">Prim's Algorithm</a></li>
+                          <li><a class="dropdown-item" href="{%url 'kruskal' %}">Kruskal's Algorithm</a></li>
+                          <li><a class="dropdown-item" href="{%url 'dijkstra' %}">Dijkstra's Algorithm</a></li>
+                        </ul>
+                      </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Graph</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{% url 'team' %}">Team</a>
                     </li>
                 </ul>
             </div>
@@ -147,7 +168,7 @@
                 </div>          
                 <div class="input-group mb-3 w-25">
                     <input type="text" class="form-control" placeholder="Speed" aria-label="Simulation Speed" id="rspeed" name="rspeed" required/>
-                    <button class="btn btn-outline-primary" type="submit" id="submit_rn" name = "submit_rn">Submit</button>
+                    <button class="btn btn-outline-danger" type="submit" id="submit_rn" name = "submit_rn">Submit</button>
                 </div>   
             </div>
         </form>
@@ -160,7 +181,7 @@
                 </div>
                 <div class="input-group mb-3 w-25">
                     <input type="text" class="form-control" placeholder="Speed" aria-label="Simulation Speed" id="cspeed" name="cspeed" required/>
-                    <button class="btn btn-outline-primary" type="submit" id="submit_cu" name="submit_cu">Submit</button>
+                    <button class="btn btn-outline-danger" type="submit" id="submit_cu" name="submit_cu">Submit</button>
                 </div>
             </div>
         </form>

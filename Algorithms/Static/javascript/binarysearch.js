@@ -33,13 +33,11 @@ function preload(){
   start = 0;
   end = n - 1;
 }
-
-function setup() {
-  createCanvas(windowWidth, 600);
+function setup(){
+  createCanvas(windowWidth-30,windowHeight/1.8);
   bar_width = width/n;
-  frameRate(10);
+  frameRate(5);
 }
-
 function draw() 
 {
   clear()
@@ -52,14 +50,13 @@ function draw()
   binary(scaled_values)
   textSize(20);
   textAlign(CENTER);
-  
   if (found==true)
   {
       stroke(119, 221, 119);
       fill(119, 221, 119,120);
       rect(bar_width*middle,0,bar_width,scaled_values[middle]);
       var txt = "Element "+value+" found";
-      text(txt,0,400,width,20)
+    text(txt, 0, height - 30,width,20)
       noLoop();
   }
   else
@@ -75,14 +72,14 @@ function draw()
     }
     if(start<=end){
       var txt = "Searching " + value ;
-      text(txt, 0, 370, width, 20)
+      text(txt, 0, height - 30, width, 20)
     }
   }
   if (start > end) {
     stroke(256, 0, 0);
     fill(256, 0, 0);
     var txt = "Search Failed";
-    text(txt, 0, 370, width, 20);
+    text(txt, 0, height-30, width, 20);
     noLoop();
   }
 }    

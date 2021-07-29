@@ -18,67 +18,78 @@
     <link rel="stylesheet" href="{% static 'css/bubblesort.css' %}">
     <title>Linear Search</title>
     <style>
-      .form-radio {
-        margin-bottom: 40px;
-      }
-    
-      .form-radio input {
-        width: 0;
-        height: 0;
-        position: absolute;
-        left: -9999px;
-      }
-    
-      .form-radio input+label {
-        margin: 0px;
-        padding: 12px 10px;
-        width: 94px;
-        height: 50px;
-        box-sizing: border-box;
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        border: 1px solid #ad8fbd;
-        background-color: #FFF;
-        font-size: 14px;
-        font-weight: 600;
-        color: #ad8fbd;
-        text-align: center;
-        text-transform: none;
-        transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -o-border-radius: 5px;
-        -ms-border-radius: 5px;
-      }
-    
-      .form-radio input:checked+label {
-        background-color: #ad8fbd;
-        color: #FFF;
-        border-color: #ad8fbd;
-        z-index: 1;
-      }
-    
-      .form-radio {
-        padding: 0 11px;
-      }
-    
-      .form-radio {
-        margin-bottom: 23px;
-        position: relative;
-      }
-    
-      .form-radio input:focus+label {
-        outline: none;
-      }
-    
-    
-      .form-radio input:hover {
-        background-color: #ad8fbd;
-        color: #FFF;
-        border-color: #ad8fbd;
-      }
+      #submit_rn{
+            border-color: #ffb6c1;
+            color: #ffb6c1;
+        }
+        #submit_cu{
+            border-color: #ffb6c1;
+            color: #ffb6c1;
+        }
+        .form-control:focus{
+            background-color: transparent;
+            color: white;
+            border-color: #da4453;
+        }
+        .form-radio {
+            margin-bottom: 40px;
+        }       
+
+        .form-radio input {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: -9999px;
+        }
+
+        .form-radio input+label {
+            margin: 0px;
+            padding: 12px 10px;
+            width: 94px;
+            height: 50px;
+            box-sizing: border-box;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            border: 1px solid #da4453;
+            background-color: #FFF;
+            font-size: 14px;
+            font-weight: 600;
+            color: #89216b;
+            text-align: center;
+            text-transform: none;
+            transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -o-border-radius: 5px;
+            -ms-border-radius: 5px;
+        }
+
+        .form-radio input:checked+label {
+            background-color: #89216b;
+            color: #FFF;
+            border-color: #89216b;
+            z-index: 1;
+        }
+        .form-radio {
+            padding: 0 11px;
+        }
+
+        .form-radio {
+            margin-bottom: 23px;
+            position: relative;
+        }
+        .form-radio input:focus+label {
+            outline: none;
+        }
+
+
+        .form-radio input:hover {
+            background-color: #89216b;
+            color: #FFF;
+            border-color: #89216b;
+        }
     </style>
 </head>
 <body id="body">
@@ -116,11 +127,19 @@
                       <li><a class="dropdown-item" href="{%url 'binarysearch' %}">Binary Search</a></li>
                     </ul>
                   </li>
+                  <li class="nav-item dropdown" id="default">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Graphs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="{% url 'traveller' %}">Travelling Salesman</a></li>
+                      <li><a class="dropdown-item" href="{%url 'prim' %}">Prim's Algorithm</a></li>
+                      <li><a class="dropdown-item" href="{%url 'kruskal' %}">Kruskal's Algorithm</a></li>
+                      <li><a class="dropdown-item" href="{%url 'dijkstra' %}">Dijkstra's Algorithm</a></li>
+                    </ul>
+                  </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Graph</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="{% url 'team' %}">Team</a>
                 </li>
             </ul>
             </div>

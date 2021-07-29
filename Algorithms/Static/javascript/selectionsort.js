@@ -6,6 +6,7 @@ var selection = [];
 var compare = [];
 var found = [];
 var sp;
+var slider;
 function loadJson(selector) {
   return JSON.parse(document.querySelector(selector).getAttribute('data-json'));
 }
@@ -25,7 +26,7 @@ function preload(){
   }
 }
 function setup() {
-  createCanvas(windowWidth, 450);
+  createCanvas(windowWidth, windowHeight/1.8);
   if (rn == true) {
     bar_width = windowWidth / n;
     for (var i = 0; i < n; i++) {
@@ -40,13 +41,17 @@ function setup() {
     compare.push(-1);
     found.push(-1);
   }
+  slider = createSlider(1, 100, sp, 1);
+  slider.position(windowWidth/13,windowHeight/2.4);
+  slider.style('width', '200px');
+  frameRate(slider.value());
   selectionSort(values, n);
-  frameRate(sp);
 }
 
 function draw() {
   clear();
   textSize(20);
+  frameRate(slider.value())
   textAlign(CENTER);
   for (var k = 0; k < n; k++) {
     if (selection[k] == 0) {
